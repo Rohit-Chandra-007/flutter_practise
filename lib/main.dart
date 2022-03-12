@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practise/screens/home_screen.dart';
+import 'package:flutter_practise/screens/login_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -7,21 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int days = 30;
-    String name = "Robot";
-
     return MaterialApp(
-      home: Scaffold(
-          appBar: AppBar(
-            title: const Text('CatalogApp'),
-          ),
-          body: Center(
-            child: Text(
-              "Welcome to $days Days of Flutter by $name",
-              style: const TextStyle(color: Colors.black),
-            ),
-          ),
-          drawer: const Drawer()),
+      routes: {
+        "/": (context) => const LoginScreen(),
+        "/login": (context) => const LoginScreen(),
+        "/home": (context) => const HomeScreen(),
+      },
+      themeMode: ThemeMode.light,
+      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      darkTheme: ThemeData(brightness: Brightness.dark),
     );
   }
 }
