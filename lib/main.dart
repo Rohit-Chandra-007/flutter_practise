@@ -7,12 +7,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Material(
-        child: Center(
-          child: Text('Welcome to 30 Days of Flutter'),
-        ),
-      ),
+    int days = 30;
+    String name = "Robot";
+
+    return MaterialApp(
+      home: Scaffold(
+          appBar: AppBar(
+            title: const Text('CatalogApp'),
+          ),
+          body: Center(
+            child: Text(
+              "Welcome to $days Days of Flutter by $name",
+              style: const TextStyle(color: Colors.black),
+            ),
+          ),
+          drawer: const Drawer()),
     );
   }
 }
